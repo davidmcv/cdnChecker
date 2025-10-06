@@ -232,6 +232,7 @@ def analyze_domain_cdn(domain: str) -> Dict:
         'cdn_providers': set(),
         'multi_cdn': False,
         'detection_methods': {},
+        'detection_details': {},  # NEW: Detailed detection info
         'ips': [],
         'cnames': [],
         'error': None
@@ -243,33 +244,77 @@ def analyze_domain_cdn(domain: str) -> Dict:
         ips = resolve_domain_ips(domain)
         result['ips'] = ips
         
+        # Track which IPs matched which CDNs
+        ip_detections = {}
         for ip in ips:
             cdns = identify_cdn_from_ip(ip)
             if cdns:
                 result['cdn_providers'].update(cdns)
-                result['detection_methods']['ip'] = list(cdns)
+                for cdn in cdns:
+                    if cdn not in ip_detections:
+                        ip_detections[cdn] = []
+                    ip_detections[cdn].append(ip)
+        
+        if ip_detections:
+            result['detection_methods']['ip'] = list(ip_detections.keys())
+            result['detection_details']['ip'] = ip_detections
         
         cnames = get_cname_chain(domain)
         result['cnames'] = cnames
         
+        # Track which CNAMEs matched which CDNs
+        cname_detections = {}
         cdns_from_cname = identify_cdn_from_cname(cnames)
         if cdns_from_cname:
             result['cdn_providers'].update(cdns_from_cname)
+            for cdn in cdns_from_cname:
+                # Find which CNAME(s) matched this CDN
+                matching_cnames = []
+                for cname in cnames:
+                    for cdn_name, cdn_data in CDN_PATTERNS.items():
+                        if cdn_name == cdn:
+                            for pattern in cdn_data['cname_patterns']:
+                                if pattern in cname.lower():
+                                    matching_cnames.append(f"{cname} (matched: {pattern})")
+                                    break
+                if matching_cnames:
+                    cname_detections[cdn] = matching_cnames
+            
             result['detection_methods']['cname'] = list(cdns_from_cname)
+            result['detection_details']['cname'] = cname_detections
         
         headers = get_http_headers(domain)
+        
+        # Track which headers matched which CDNs
+        header_detections = {}
         cdns_from_headers = identify_cdn_from_headers(headers)
         if cdns_from_headers:
             result['cdn_providers'].update(cdns_from_headers)
+            for cdn in cdns_from_headers:
+                # Find which headers matched this CDN
+                matching_headers = []
+                for cdn_name, cdn_data in CDN_PATTERNS.items():
+                    if cdn_name == cdn:
+                        for pattern in cdn_data['headers']:
+                            for header_key, header_value in headers.items():
+                                if pattern.lower() in header_key or pattern.lower() in header_value:
+                                    matching_headers.append(f"{header_key}: {header_value}")
+                                    break
+                if matching_headers:
+                    header_detections[cdn] = matching_headers
+            
             result['detection_methods']['headers'] = list(cdns_from_headers)
+            result['detection_details']['headers'] = header_detections
         
         result['multi_cdn'] = len(result['cdn_providers']) > 1
         
         if not result['cdn_providers']:
             if any(tech in domain for tech in ['apple', 'microsoft', 'google', 'amazon', 'meta', 'facebook']):
                 result['cdn_providers'].add('Internal/Proprietary CDN')
+                result['detection_details']['fallback'] = 'Tech giant - assumed internal CDN'
             else:
                 result['cdn_providers'].add('Direct/Origin Server')
+                result['detection_details']['fallback'] = 'No CDN detected by any method'
         
     except Exception as e:
         result['status'] = 'error'
@@ -324,7 +369,8 @@ def export_to_csv(results: List[Dict], filename: str):
     """Export to CSV"""
     with open(filename, 'w', newline='') as csvfile:
         fieldnames = ['Industry', 'Company', 'Domain', 'CDN_Providers', 'Multi_CDN',
-                      'Detection_Methods', 'Status', 'Error', 'Timestamp']
+                      'Detection_Methods', 'IP_Detection', 'CNAME_Detection', 'Header_Detection',
+                      'Status', 'Error', 'Timestamp']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         
@@ -339,6 +385,22 @@ def export_to_csv(results: List[Dict], filename: str):
             company_name = DOMAIN_TO_COMPANY.get(result['domain'], result['domain'])
             detection = '; '.join([f"{k}: {','.join(v)}" for k, v in result.get('detection_methods', {}).items()])
             
+            # Format detection details
+            ip_details = []
+            if 'ip' in result.get('detection_details', {}):
+                for cdn, ips in result['detection_details']['ip'].items():
+                    ip_details.append(f"{cdn}: {', '.join(ips)}")
+            
+            cname_details = []
+            if 'cname' in result.get('detection_details', {}):
+                for cdn, cnames in result['detection_details']['cname'].items():
+                    cname_details.append(f"{cdn}: {'; '.join(cnames)}")
+            
+            header_details = []
+            if 'headers' in result.get('detection_details', {}):
+                for cdn, headers in result['detection_details']['headers'].items():
+                    header_details.append(f"{cdn}: {'; '.join(headers[:2])}")  # Limit to first 2 headers
+            
             rows.append({
                 'Industry': industry,
                 'Company': company_name,
@@ -346,6 +408,9 @@ def export_to_csv(results: List[Dict], filename: str):
                 'CDN_Providers': '; '.join(result.get('cdn_providers', [])),
                 'Multi_CDN': 'YES' if result.get('multi_cdn', False) else 'NO',
                 'Detection_Methods': detection,
+                'IP_Detection': '; '.join(ip_details),
+                'CNAME_Detection': '; '.join(cname_details),
+                'Header_Detection': '; '.join(header_details),
                 'Status': result['status'],
                 'Error': result.get('error', ''),
                 'Timestamp': result['timestamp']
@@ -382,6 +447,55 @@ def export_to_markdown(results: List[Dict], stats: Dict, by_industry: Dict, file
         for provider, count in sorted_providers:
             percentage = (count / stats['successful']) * 100 if stats['successful'] > 0 else 0
             f.write(f"| {provider} | {count} | {percentage:.1f}% |\n")
+        
+        f.write("\n## Detailed CDN Detection Results\n\n")
+        
+        for industry, domains in COMPANIES.items():
+            f.write(f"### {industry}\n\n")
+            
+            for domain in domains:
+                result = next((r for r in results if r['domain'] == domain), None)
+                if result and result['status'] == 'success':
+                    company_name = DOMAIN_TO_COMPANY.get(domain, domain)
+                    f.write(f"#### {company_name} ({domain})\n\n")
+                    
+                    f.write(f"**CDN Providers:** {', '.join(result['cdn_providers'])}\n\n")
+                    f.write(f"**Multi-CDN:** {'✅ YES' if result['multi_cdn'] else '❌ NO'}\n\n")
+                    
+                    # Detection details
+                    if 'detection_details' in result and result['detection_details']:
+                        f.write("**Detection Details:**\n\n")
+                        
+                        # IP Detection
+                        if 'ip' in result['detection_details']:
+                            f.write("- **IP Address Detection:**\n")
+                            for cdn, ips in result['detection_details']['ip'].items():
+                                f.write(f"  - **{cdn}:** Detected via IPs: {', '.join(ips)}\n")
+                            f.write("\n")
+                        
+                        # CNAME Detection
+                        if 'cname' in result['detection_details']:
+                            f.write("- **CNAME Detection:**\n")
+                            for cdn, cnames in result['detection_details']['cname'].items():
+                                f.write(f"  - **{cdn}:**\n")
+                                for cname in cnames:
+                                    f.write(f"    - {cname}\n")
+                            f.write("\n")
+                        
+                        # Header Detection
+                        if 'headers' in result['detection_details']:
+                            f.write("- **HTTP Header Detection:**\n")
+                            for cdn, headers in result['detection_details']['headers'].items():
+                                f.write(f"  - **{cdn}:** Detected via headers:\n")
+                                for header in headers[:3]:  # Limit to first 3 headers
+                                    f.write(f"    - `{header}`\n")
+                            f.write("\n")
+                        
+                        # Fallback detection
+                        if 'fallback' in result['detection_details']:
+                            f.write(f"- **Note:** {result['detection_details']['fallback']}\n\n")
+                    
+                    f.write("---\n\n")
     
     print(f"✅ Markdown report saved to: {filename}")
 

@@ -1,7 +1,7 @@
 [
   {
     "domain": "unitedhealthgroup.com",
-    "timestamp": "2025-10-06T21:24:00.530353",
+    "timestamp": "2025-10-06T22:01:19.719439",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -12,24 +12,37 @@
         "Fastly"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.3.10",
+          "151.101.67.10",
+          "151.101.131.10",
+          "151.101.195.10"
+        ]
+      }
+    },
     "ips": [
+      "151.101.3.10",
       "151.101.67.10",
-      "151.101.195.10",
       "151.101.131.10",
-      "151.101.3.10"
+      "151.101.195.10"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "cvshealth.com",
-    "timestamp": "2025-10-06T21:24:02.254304",
+    "timestamp": "2025-10-06T22:01:20.382839",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "95.101.247.72"
     ],
@@ -38,23 +51,26 @@
   },
   {
     "domain": "jnj.com",
-    "timestamp": "2025-10-06T21:24:02.632583",
+    "timestamp": "2025-10-06T22:01:20.586850",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
-      "13.248.160.137",
-      "76.223.34.124"
+      "76.223.34.124",
+      "13.248.160.137"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "pfizer.com",
-    "timestamp": "2025-10-06T21:24:03.271526",
+    "timestamp": "2025-10-06T22:01:21.151153",
     "status": "success",
     "cdn_providers": [
       "Cloudflare"
@@ -68,38 +84,57 @@
         "Cloudflare"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "104.18.35.94",
+          "172.64.152.162"
+        ]
+      },
+      "headers": {
+        "Cloudflare": [
+          "cf-ray: 98a817f04db2220e-man"
+        ]
+      }
+    },
     "ips": [
-      "172.64.152.162",
-      "104.18.35.94"
+      "104.18.35.94",
+      "172.64.152.162"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "cigna.com",
-    "timestamp": "2025-10-06T21:24:03.595586",
+    "timestamp": "2025-10-06T22:01:21.378335",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
-      "170.48.10.90",
-      "170.48.29.90"
+      "170.48.29.90",
+      "170.48.10.90"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "apple.com",
-    "timestamp": "2025-10-06T21:24:04.622714",
+    "timestamp": "2025-10-06T22:01:22.086819",
     "status": "success",
     "cdn_providers": [
       "Internal/Proprietary CDN"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "Tech giant - assumed internal CDN"
+    },
     "ips": [
       "17.253.144.10"
     ],
@@ -108,7 +143,7 @@
   },
   {
     "domain": "microsoft.com",
-    "timestamp": "2025-10-06T21:24:04.754576",
+    "timestamp": "2025-10-06T22:01:22.202102",
     "status": "success",
     "cdn_providers": [
       "Azure CDN"
@@ -122,16 +157,29 @@
         "Azure CDN"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "13.107.213.64",
+          "13.107.246.64"
+        ]
+      },
+      "headers": {
+        "Azure CDN": [
+          "x-azure-ref: 20251006t210122z-179bf966c7fdhn75hc1lonu3hs0000001qv00000000068fv"
+        ]
+      }
+    },
     "ips": [
-      "13.107.246.64",
-      "13.107.213.64"
+      "13.107.213.64",
+      "13.107.246.64"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "amazon.com",
-    "timestamp": "2025-10-06T21:24:05.176407",
+    "timestamp": "2025-10-06T22:01:22.432895",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
@@ -140,111 +188,31 @@
     "multi_cdn": true,
     "detection_methods": {
       "ip": [
-        "AWS CloudFront"
+        "AWS CloudFront",
+        "Azure CDN"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "AWS CloudFront": [
+          "205.251.242.103"
+        ],
+        "Azure CDN": [
+          "52.94.236.248"
+        ]
+      }
+    },
     "ips": [
-      "54.239.28.85",
+      "205.251.242.103",
       "52.94.236.248",
-      "205.251.242.103"
+      "54.239.28.85"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "google.com",
-    "timestamp": "2025-10-06T21:24:05.692214",
-    "status": "success",
-    "cdn_providers": [
-      "Internal/Proprietary CDN"
-    ],
-    "multi_cdn": false,
-    "detection_methods": {},
-    "ips": [
-      "142.251.29.101",
-      "142.251.29.100",
-      "142.251.29.102",
-      "142.251.29.113",
-      "142.251.29.138",
-      "142.251.29.139"
-    ],
-    "cnames": [],
-    "error": null
-  },
-  {
-    "domain": "meta.com",
-    "timestamp": "2025-10-06T21:24:05.929977",
-    "status": "success",
-    "cdn_providers": [
-      "Internal/Proprietary CDN"
-    ],
-    "multi_cdn": false,
-    "detection_methods": {},
-    "ips": [
-      "31.13.73.18"
-    ],
-    "cnames": [],
-    "error": null
-  },
-  {
-    "domain": "walmart.com",
-    "timestamp": "2025-10-06T21:24:06.416273",
-    "status": "success",
-    "cdn_providers": [
-      "Direct/Origin Server"
-    ],
-    "multi_cdn": false,
-    "detection_methods": {},
-    "ips": [
-      "95.100.166.21"
-    ],
-    "cnames": [],
-    "error": null
-  },
-  {
-    "domain": "amazon.com",
-    "timestamp": "2025-10-06T21:24:06.662315",
-    "status": "success",
-    "cdn_providers": [
-      "AWS CloudFront",
-      "Azure CDN"
-    ],
-    "multi_cdn": true,
-    "detection_methods": {
-      "ip": [
-        "AWS CloudFront"
-      ]
-    },
-    "ips": [
-      "54.239.28.85",
-      "52.94.236.248",
-      "205.251.242.103"
-    ],
-    "cnames": [],
-    "error": null
-  },
-  {
-    "domain": "costco.com",
-    "timestamp": "2025-10-06T21:24:07.043217",
-    "status": "success",
-    "cdn_providers": [
-      "Akamai"
-    ],
-    "multi_cdn": false,
-    "detection_methods": {
-      "ip": [
-        "Akamai"
-      ]
-    },
-    "ips": [
-      "23.206.178.29"
-    ],
-    "cnames": [],
-    "error": null
-  },
-  {
-    "domain": "homedepot.com",
-    "timestamp": "2025-10-06T21:24:07.514737",
+    "timestamp": "2025-10-06T22:01:22.839137",
     "status": "success",
     "cdn_providers": [
       "Google Cloud CDN"
@@ -255,6 +223,152 @@
         "Google Cloud CDN"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Google Cloud CDN": [
+          "142.250.129.113",
+          "142.250.129.100",
+          "142.250.129.138",
+          "142.250.129.139",
+          "142.250.129.102",
+          "142.250.129.101"
+        ]
+      }
+    },
+    "ips": [
+      "142.250.129.113",
+      "142.250.129.100",
+      "142.250.129.138",
+      "142.250.129.139",
+      "142.250.129.102",
+      "142.250.129.101"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "meta.com",
+    "timestamp": "2025-10-06T22:01:22.983613",
+    "status": "success",
+    "cdn_providers": [
+      "Internal/Proprietary CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {},
+    "detection_details": {
+      "fallback": "Tech giant - assumed internal CDN"
+    },
+    "ips": [
+      "31.13.73.18"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "walmart.com",
+    "timestamp": "2025-10-06T22:01:23.266290",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.22.68.127"
+        ]
+      }
+    },
+    "ips": [
+      "2.22.68.127"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "amazon.com",
+    "timestamp": "2025-10-06T22:01:23.449419",
+    "status": "success",
+    "cdn_providers": [
+      "AWS CloudFront",
+      "Azure CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "AWS CloudFront",
+        "Azure CDN"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "AWS CloudFront": [
+          "205.251.242.103"
+        ],
+        "Azure CDN": [
+          "52.94.236.248"
+        ]
+      }
+    },
+    "ips": [
+      "205.251.242.103",
+      "52.94.236.248",
+      "54.239.28.85"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "costco.com",
+    "timestamp": "2025-10-06T22:01:23.859272",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.23.149.155"
+        ]
+      }
+    },
+    "ips": [
+      "2.23.149.155"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "homedepot.com",
+    "timestamp": "2025-10-06T22:01:24.168114",
+    "status": "success",
+    "cdn_providers": [
+      "Google Cloud CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Google Cloud CDN"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Google Cloud CDN": [
+          "35.201.95.83"
+        ]
+      }
+    },
     "ips": [
       "35.201.95.83"
     ],
@@ -263,7 +377,7 @@
   },
   {
     "domain": "target.com",
-    "timestamp": "2025-10-06T21:24:07.859969",
+    "timestamp": "2025-10-06T22:01:24.424086",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -274,85 +388,107 @@
         "Fastly"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.66.187",
+          "151.101.194.187",
+          "151.101.130.187",
+          "151.101.2.187"
+        ]
+      }
+    },
     "ips": [
       "151.101.66.187",
-      "151.101.2.187",
       "151.101.194.187",
-      "151.101.130.187"
+      "151.101.130.187",
+      "151.101.2.187"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "jpmorganchase.com",
-    "timestamp": "2025-10-06T21:24:08.044365",
+    "timestamp": "2025-10-06T22:01:24.592297",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
+      "146.143.70.109",
       "146.143.198.109",
-      "146.143.134.109",
-      "146.143.70.109"
+      "146.143.134.109"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "jpmorgan.com",
-    "timestamp": "2025-10-06T21:24:09.458010",
+    "timestamp": "2025-10-06T22:01:25.425744",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
+      "146.143.70.109",
       "146.143.198.109",
-      "146.143.134.109",
-      "146.143.70.109"
+      "146.143.134.109"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "chase.com",
-    "timestamp": "2025-10-06T21:24:10.192386",
+    "timestamp": "2025-10-06T22:01:25.981493",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
+      "146.143.13.57",
       "146.143.83.57",
-      "146.143.141.57",
-      "146.143.13.57"
+      "146.143.141.57"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "bankofamerica.com",
-    "timestamp": "2025-10-06T21:24:10.967135",
+    "timestamp": "2025-10-06T22:01:26.526765",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
-      "171.159.228.150",
-      "171.161.148.150"
+      "171.161.148.150",
+      "171.159.228.150"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "wellsfargo.com",
-    "timestamp": "2025-10-06T21:24:11.767359",
+    "timestamp": "2025-10-06T22:01:27.133922",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -362,6 +498,14 @@
       "ip": [
         "Akamai"
       ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.19.248.222",
+          "2.19.248.216"
+        ]
+      }
     },
     "ips": [
       "2.19.248.222",
@@ -372,13 +516,16 @@
   },
   {
     "domain": "citigroup.com",
-    "timestamp": "2025-10-06T21:24:11.983751",
+    "timestamp": "2025-10-06T22:01:27.347506",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "104.94.222.171",
       "104.96.178.165"
@@ -388,7 +535,7 @@
   },
   {
     "domain": "goldmansachs.com",
-    "timestamp": "2025-10-06T21:24:13.140505",
+    "timestamp": "2025-10-06T22:01:28.468036",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -399,6 +546,14 @@
         "Akamai"
       ]
     },
+    "detection_details": {
+      "headers": {
+        "Akamai": [
+          "x-akamai-device-characteristics: ajax_preferred_geoloc_api=none;device_os=;device_os_version=;is_tablet=false;is_wireless_device=false2;mobile_browser=;mobile_browser_version=;physical_screen_height=400;physical_screen_width=400;resolution_height=600;resolution_width=800;viewport_initial_scale=;viewport_width=width_equals_max_image_width;is_mobile=false",
+          "x-akamai-device-characteristics: ajax_preferred_geoloc_api=none;device_os=;device_os_version=;is_tablet=false;is_wireless_device=false2;mobile_browser=;mobile_browser_version=;physical_screen_height=400;physical_screen_width=400;resolution_height=600;resolution_width=800;viewport_initial_scale=;viewport_width=width_equals_max_image_width;is_mobile=false"
+        ]
+      }
+    },
     "ips": [
       "104.103.193.191"
     ],
@@ -407,7 +562,7 @@
   },
   {
     "domain": "paypal.com",
-    "timestamp": "2025-10-06T21:24:13.504909",
+    "timestamp": "2025-10-06T22:01:28.729777",
     "status": "success",
     "cdn_providers": [
       "Cloudflare",
@@ -416,12 +571,24 @@
     "multi_cdn": true,
     "detection_methods": {
       "ip": [
+        "Cloudflare",
         "Fastly"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "162.159.141.96"
+        ],
+        "Fastly": [
+          "151.101.3.1",
+          "151.101.195.1"
+        ]
+      }
+    },
     "ips": [
-      "151.101.3.1",
       "162.159.141.96",
+      "151.101.3.1",
       "151.101.195.1"
     ],
     "cnames": [],
@@ -429,7 +596,7 @@
   },
   {
     "domain": "visa.com",
-    "timestamp": "2025-10-06T21:24:13.786461",
+    "timestamp": "2025-10-06T22:01:29.005681",
     "status": "success",
     "cdn_providers": [
       "Cloudflare"
@@ -443,22 +610,38 @@
         "Cloudflare"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "162.159.152.2",
+          "162.159.153.2"
+        ]
+      },
+      "headers": {
+        "Cloudflare": [
+          "cf-ray: 98a818216d98c9aa-lhr"
+        ]
+      }
+    },
     "ips": [
-      "162.159.153.2",
-      "162.159.152.2"
+      "162.159.152.2",
+      "162.159.153.2"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "mastercard.com",
-    "timestamp": "2025-10-06T21:24:14.094000",
+    "timestamp": "2025-10-06T22:01:29.217210",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "216.119.218.99"
     ],
@@ -467,7 +650,7 @@
   },
   {
     "domain": "stripe.com",
-    "timestamp": "2025-10-06T21:24:14.664020",
+    "timestamp": "2025-10-06T22:01:29.749434",
     "status": "success",
     "cdn_providers": [
       "Azure CDN"
@@ -478,17 +661,25 @@
         "Azure CDN"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "52.30.58.64",
+          "52.49.17.168"
+        ]
+      }
+    },
     "ips": [
       "52.30.58.64",
-      "18.202.131.124",
-      "52.49.17.168"
+      "52.49.17.168",
+      "18.202.131.124"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "block.xyz",
-    "timestamp": "2025-10-06T21:24:15.523405",
+    "timestamp": "2025-10-06T22:01:30.133060",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -499,40 +690,56 @@
         "Fastly"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.129.49",
+          "151.101.193.49",
+          "151.101.1.49",
+          "151.101.65.49"
+        ]
+      }
+    },
     "ips": [
-      "151.101.65.49",
       "151.101.129.49",
+      "151.101.193.49",
       "151.101.1.49",
-      "151.101.193.49"
+      "151.101.65.49"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "exxonmobil.com",
-    "timestamp": "2025-10-06T21:24:16.936111",
+    "timestamp": "2025-10-06T22:01:30.690661",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
-      "172.190.140.10",
-      "13.64.199.231"
+      "13.64.199.231",
+      "172.190.140.10"
     ],
     "cnames": [],
     "error": null
   },
   {
     "domain": "chevron.com",
-    "timestamp": "2025-10-06T21:24:17.527041",
+    "timestamp": "2025-10-06T22:01:31.285114",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "146.23.28.130"
     ],
@@ -541,13 +748,16 @@
   },
   {
     "domain": "conocophillips.com",
-    "timestamp": "2025-10-06T21:24:18.121441",
+    "timestamp": "2025-10-06T22:01:32.306922",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "138.32.33.226"
     ],
@@ -556,13 +766,16 @@
   },
   {
     "domain": "duke-energy.com",
-    "timestamp": "2025-10-06T21:24:18.828999",
+    "timestamp": "2025-10-06T22:01:33.074227",
     "status": "success",
     "cdn_providers": [
       "Direct/Origin Server"
     ],
     "multi_cdn": false,
     "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
     "ips": [
       "159.110.128.81"
     ],
@@ -571,7 +784,7 @@
   },
   {
     "domain": "nexteraenergy.com",
-    "timestamp": "2025-10-06T21:24:19.684536",
+    "timestamp": "2025-10-06T22:01:33.823930",
     "status": "success",
     "cdn_providers": [
       "Google Cloud CDN"
@@ -582,9 +795,16 @@
         "Google Cloud CDN"
       ]
     },
+    "detection_details": {
+      "ip": {
+        "Google Cloud CDN": [
+          "34.230.143.86"
+        ]
+      }
+    },
     "ips": [
-      "34.230.143.86",
-      "54.236.212.102"
+      "54.236.212.102",
+      "34.230.143.86"
     ],
     "cnames": [],
     "error": null
