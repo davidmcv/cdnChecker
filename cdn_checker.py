@@ -808,15 +808,30 @@ def export_to_markdown(results: List[Dict], stats: Dict, by_industry: Dict, file
 def check_dependencies():
     """Check required commands"""
     missing = []
-    for cmd in ['curl', 'dig', 'whois']:
-        try:
-            subprocess.run([cmd, '--version'], capture_output=True, timeout=5, stderr=subprocess.DEVNULL)
-        except:
-            # whois doesn't support --version, try -h instead
-            try:
-                subprocess.run([cmd, '-h'], capture_output=True, timeout=5, stderr=subprocess.DEVNULL)
-            except:
-                missing.append(cmd)
+    
+    # Check curl
+    try:
+        result = subprocess.run(['which', 'curl'], capture_output=True, timeout=5)
+        if result.returncode != 0:
+            missing.append('curl')
+    except:
+        missing.append('curl')
+    
+    # Check dig
+    try:
+        result = subprocess.run(['which', 'dig'], capture_output=True, timeout=5)
+        if result.returncode != 0:
+            missing.append('dig')
+    except:
+        missing.append('dig')
+    
+    # Check whois
+    try:
+        result = subprocess.run(['which', 'whois'], capture_output=True, timeout=5)
+        if result.returncode != 0:
+            missing.append('whois')
+    except:
+        missing.append('whois')
     
     if missing:
         print(f"❌ Error: Missing required commands: {', '.join(missing)}")
@@ -825,6 +840,8 @@ def check_dependencies():
         print("  Ubuntu/Debian: sudo apt-get install curl dnsutils whois")
         print("  RHEL/CentOS: sudo yum install curl bind-utils whois")
         return False
+    
+    print("✅ All dependencies found (curl, dig, whois)")
     return True
 
 
@@ -913,7 +930,4 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         sys.exit(1)
-
-
-
 
