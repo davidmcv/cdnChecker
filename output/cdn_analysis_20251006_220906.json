@@ -1,0 +1,1235 @@
+[
+  {
+    "domain": "unitedhealthgroup.com",
+    "timestamp": "2025-10-06T22:08:48.275733",
+    "status": "success",
+    "cdn_providers": [
+      "Fastly"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Fastly"
+      ],
+      "cname": [
+        "Fastly"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.195.10",
+          "151.101.3.10",
+          "151.101.67.10",
+          "151.101.131.10",
+          "199.232.55.10"
+        ]
+      },
+      "cname": {
+        "Fastly": [
+          "adobe-aem.map.fastly.net (matched: fastly)"
+        ]
+      }
+    },
+    "ips": [
+      "151.101.195.10",
+      "151.101.3.10",
+      "151.101.67.10",
+      "151.101.131.10",
+      "199.232.55.10"
+    ],
+    "cnames": [
+      "cdn.adobeaemcloud.com",
+      "adobe-aem.map.fastly.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "cvshealth.com",
+    "timestamp": "2025-10-06T22:08:48.981556",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "23.64.26.224"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.cvshealth.com.edgekey.net (matched: edgekey)",
+          "e4953.x.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "23.64.26.224",
+      "95.101.247.72"
+    ],
+    "cnames": [
+      "www.cvshealth.com.edgekey.net",
+      "e4953.x.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "jnj.com",
+    "timestamp": "2025-10-06T22:08:49.313786",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.jnj.com.edgekey.net (matched: edgekey)",
+          "e16609.dsca.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "76.223.34.124",
+      "13.248.160.137",
+      "184.85.54.197"
+    ],
+    "cnames": [
+      "www.jnj.com.edgekey.net",
+      "e16609.dsca.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "pfizer.com",
+    "timestamp": "2025-10-06T22:08:49.931640",
+    "status": "success",
+    "cdn_providers": [
+      "Cloudflare"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Cloudflare"
+      ],
+      "cname": [
+        "Cloudflare"
+      ],
+      "headers": [
+        "Cloudflare"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "172.64.152.162",
+          "104.18.35.94"
+        ]
+      },
+      "cname": {
+        "Cloudflare": [
+          "www.pfizer.com.cdn.cloudflare.net (matched: cloudflare)"
+        ]
+      },
+      "headers": {
+        "Cloudflare": [
+          "cf-ray: 98a822e57e96f44b-man"
+        ]
+      }
+    },
+    "ips": [
+      "172.64.152.162",
+      "104.18.35.94"
+    ],
+    "cnames": [
+      "www.pfizer.com.cdn.cloudflare.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "cigna.com",
+    "timestamp": "2025-10-06T22:08:50.184753",
+    "status": "success",
+    "cdn_providers": [
+      "Direct/Origin Server"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {},
+    "detection_details": {
+      "fallback": "No CDN detected by any method"
+    },
+    "ips": [
+      "170.48.10.90",
+      "170.48.29.90"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "apple.com",
+    "timestamp": "2025-10-06T22:08:51.075164",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.19.0.204"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.apple.com.edgekey.net (matched: edgekey)",
+          "e6858.dsce9.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "17.253.144.10",
+      "2.19.0.204"
+    ],
+    "cnames": [
+      "www-apple-com.v.aaplimg.com",
+      "www.apple.com.edgekey.net",
+      "e6858.dsce9.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "microsoft.com",
+    "timestamp": "2025-10-06T22:08:51.483230",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai",
+      "Azure CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "Azure CDN",
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ],
+      "headers": [
+        "Azure CDN"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "13.107.246.64",
+          "13.107.213.64"
+        ],
+        "Akamai": [
+          "23.37.198.101"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.microsoft.com-c-3.edgekey.net.\nwww.microsoft.com-c-3.edgekey.net.globalredir.akadns.net.\ne13678.dscb.akamaiedge.net (matched: akamai)"
+        ]
+      },
+      "headers": {
+        "Azure CDN": [
+          "x-azure-ref: 20251006t210851z-17b47f46bf8rwrvvhc1loncc6c00000004g000000000t2md"
+        ]
+      }
+    },
+    "ips": [
+      "13.107.246.64",
+      "13.107.213.64",
+      "23.37.198.101"
+    ],
+    "cnames": [
+      "www.microsoft.com-c-3.edgekey.net.\nwww.microsoft.com-c-3.edgekey.net.globalredir.akadns.net.\ne13678.dscb.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "amazon.com",
+    "timestamp": "2025-10-06T22:08:51.800431",
+    "status": "success",
+    "cdn_providers": [
+      "AWS CloudFront",
+      "Azure CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "Azure CDN",
+        "AWS CloudFront"
+      ],
+      "cname": [
+        "AWS CloudFront"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "52.94.236.248"
+        ],
+        "AWS CloudFront": [
+          "205.251.242.103"
+        ]
+      },
+      "cname": {
+        "AWS CloudFront": [
+          "d3ag4hukkh62yn.cloudfront.net (matched: cloudfront)"
+        ]
+      }
+    },
+    "ips": [
+      "52.94.236.248",
+      "54.239.28.85",
+      "205.251.242.103",
+      "3.165.151.141"
+    ],
+    "cnames": [
+      "tp.47cf2c8c9-frontier.amazon.com",
+      "d3ag4hukkh62yn.cloudfront.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "google.com",
+    "timestamp": "2025-10-06T22:08:52.239877",
+    "status": "success",
+    "cdn_providers": [
+      "Internal/Proprietary CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {},
+    "detection_details": {
+      "fallback": "Tech giant - assumed internal CDN"
+    },
+    "ips": [
+      "142.251.29.100",
+      "142.251.29.139",
+      "142.251.29.138",
+      "142.251.29.102",
+      "142.251.29.113",
+      "142.251.29.101",
+      "142.251.29.103",
+      "142.251.29.106",
+      "142.251.29.104",
+      "142.251.29.147",
+      "142.251.29.99",
+      "142.251.29.105"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "meta.com",
+    "timestamp": "2025-10-06T22:08:52.645367",
+    "status": "success",
+    "cdn_providers": [
+      "Internal/Proprietary CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {},
+    "detection_details": {
+      "fallback": "Tech giant - assumed internal CDN"
+    },
+    "ips": [
+      "31.13.73.18",
+      "157.240.225.5"
+    ],
+    "cnames": [
+      "star.c10r.facebook.com"
+    ],
+    "error": null
+  },
+  {
+    "domain": "walmart.com",
+    "timestamp": "2025-10-06T22:08:53.068140",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "23.217.4.243",
+          "23.206.176.192"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.walmart.com.edgekey.net (matched: edgekey)",
+          "e4373.x.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "23.217.4.243",
+      "23.206.176.192"
+    ],
+    "cnames": [
+      "www.walmart.com.ultradns-wal.co",
+      "www.walmart.com.edgekey.net",
+      "e4373.x.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "amazon.com",
+    "timestamp": "2025-10-06T22:08:53.764564",
+    "status": "success",
+    "cdn_providers": [
+      "AWS CloudFront",
+      "Azure CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "AWS CloudFront",
+        "Azure CDN"
+      ],
+      "cname": [
+        "AWS CloudFront"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "AWS CloudFront": [
+          "205.251.242.103"
+        ],
+        "Azure CDN": [
+          "52.94.236.248"
+        ]
+      },
+      "cname": {
+        "AWS CloudFront": [
+          "d3ag4hukkh62yn.cloudfront.net (matched: cloudfront)"
+        ]
+      }
+    },
+    "ips": [
+      "54.239.28.85",
+      "205.251.242.103",
+      "52.94.236.248",
+      "3.165.151.141"
+    ],
+    "cnames": [
+      "tp.47cf2c8c9-frontier.amazon.com",
+      "d3ag4hukkh62yn.cloudfront.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "costco.com",
+    "timestamp": "2025-10-06T22:08:54.443066",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.23.149.155",
+          "23.214.210.17"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "costco.com.edgekey.net (matched: edgekey)",
+          "e11626.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "2.23.149.155",
+      "23.214.210.17"
+    ],
+    "cnames": [
+      "costco.com.edgekey.net",
+      "e11626.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "homedepot.com",
+    "timestamp": "2025-10-06T22:08:54.961769",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai",
+      "Google Cloud CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "Google Cloud CDN",
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Google Cloud CDN": [
+          "35.201.95.83"
+        ],
+        "Akamai": [
+          "2.22.69.145"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.homedepot.com.edgekey.net (matched: edgekey)",
+          "e14801.x.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "35.201.95.83",
+      "2.22.69.145"
+    ],
+    "cnames": [
+      "www.homedepot.com.edgekey.net",
+      "e14801.x.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "target.com",
+    "timestamp": "2025-10-06T22:08:55.434413",
+    "status": "success",
+    "cdn_providers": [
+      "Fastly"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Fastly"
+      ],
+      "cname": [
+        "Fastly"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.130.187",
+          "151.101.66.187",
+          "151.101.194.187",
+          "151.101.2.187",
+          "199.232.54.187"
+        ]
+      },
+      "cname": {
+        "Fastly": [
+          "sites.target.map.fastly.net (matched: fastly)"
+        ]
+      }
+    },
+    "ips": [
+      "151.101.130.187",
+      "151.101.66.187",
+      "151.101.194.187",
+      "151.101.2.187",
+      "199.232.54.187"
+    ],
+    "cnames": [
+      "sites.target.map.fastly.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "jpmorganchase.com",
+    "timestamp": "2025-10-06T22:08:55.636515",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.jpmorganchase.com.edgekey.net (matched: edgekey)",
+          "e304256.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "146.143.70.109",
+      "146.143.134.109",
+      "146.143.198.109",
+      "95.100.104.33",
+      "95.100.104.6"
+    ],
+    "cnames": [
+      "www.jpmorganchase.com.edgekey.net",
+      "e304256.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "jpmorgan.com",
+    "timestamp": "2025-10-06T22:08:56.449799",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.22.228.187",
+          "2.22.228.169"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.jpmorgan.com.edgekey.net (matched: edgekey)",
+          "e304256.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "146.143.70.109",
+      "146.143.134.109",
+      "146.143.198.109",
+      "2.22.228.187",
+      "95.100.104.33",
+      "95.100.104.6",
+      "2.22.228.169"
+    ],
+    "cnames": [
+      "www.jpmorgan.com.edgekey.net",
+      "e304256.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "chase.com",
+    "timestamp": "2025-10-06T22:08:56.992723",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "23.3.68.159",
+          "23.3.68.140"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.chase.com.edgekey.net (matched: edgekey)",
+          "e129412.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "146.143.141.57",
+      "146.143.83.57",
+      "146.143.13.57",
+      "23.3.68.159",
+      "23.3.68.140"
+    ],
+    "cnames": [
+      "gtm.www.chase.com.akadns.net",
+      "www.chase.com.edgekey.net",
+      "e129412.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "bankofamerica.com",
+    "timestamp": "2025-10-06T22:08:57.599961",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.bankofamerica.com.edgekey.net (matched: edgekey)",
+          "e88506.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "171.161.148.150",
+      "171.159.228.150",
+      "95.100.104.13",
+      "95.100.104.24"
+    ],
+    "cnames": [
+      "wwwui.ecglb.bac.com",
+      "www.bankofamerica.com.edgekey.net",
+      "e88506.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "wellsfargo.com",
+    "timestamp": "2025-10-06T22:08:58.422218",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "2.19.248.216",
+          "2.19.248.222"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.wellsfargo.com.edgekey.net (matched: edgekey)",
+          "e82164.b.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "2.19.248.216",
+      "2.19.248.222",
+      "184.50.114.10",
+      "184.50.113.234"
+    ],
+    "cnames": [
+      "www.wellsfargo.com.edgekey.net",
+      "e82164.b.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "citigroup.com",
+    "timestamp": "2025-10-06T22:08:58.674423",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.citigroup.com.edgekey.net (matched: edgekey)",
+          "e94533.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "104.96.178.165",
+      "104.94.222.171",
+      "95.100.104.35",
+      "95.100.104.13"
+    ],
+    "cnames": [
+      "www.citigroup.com.edgekey.net",
+      "e94533.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "goldmansachs.com",
+    "timestamp": "2025-10-06T22:09:00.249330",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ],
+      "headers": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.gs.com.edgekey.net (matched: edgekey)",
+          "e17133.x.akamaiedge.net (matched: akamai)"
+        ]
+      },
+      "headers": {
+        "Akamai": [
+          "x-akamai-device-characteristics: ajax_preferred_geoloc_api=none;device_os=;device_os_version=;is_tablet=false;is_wireless_device=false2;mobile_browser=;mobile_browser_version=;physical_screen_height=400;physical_screen_width=400;resolution_height=600;resolution_width=800;viewport_initial_scale=;viewport_width=width_equals_max_image_width;is_mobile=false",
+          "x-akamai-device-characteristics: ajax_preferred_geoloc_api=none;device_os=;device_os_version=;is_tablet=false;is_wireless_device=false2;mobile_browser=;mobile_browser_version=;physical_screen_height=400;physical_screen_width=400;resolution_height=600;resolution_width=800;viewport_initial_scale=;viewport_width=width_equals_max_image_width;is_mobile=false"
+        ]
+      }
+    },
+    "ips": [
+      "104.103.193.191"
+    ],
+    "cnames": [
+      "www.gs.com",
+      "www.gs.com.edgekey.net",
+      "e17133.x.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "paypal.com",
+    "timestamp": "2025-10-06T22:09:00.642043",
+    "status": "success",
+    "cdn_providers": [
+      "Cloudflare",
+      "Fastly"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "Cloudflare",
+        "Fastly"
+      ],
+      "cname": [
+        "Fastly"
+      ],
+      "headers": [
+        "Cloudflare"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "162.159.141.96"
+        ],
+        "Fastly": [
+          "151.101.3.1",
+          "151.101.195.1",
+          "199.232.53.21"
+        ]
+      },
+      "cname": {
+        "Fastly": [
+          "paypal-dynamic.map.fastly.net (matched: fastly)"
+        ]
+      },
+      "headers": {
+        "Cloudflare": [
+          "cf-ray: 98a82328bab6d1f9-lhr"
+        ]
+      }
+    },
+    "ips": [
+      "162.159.141.96",
+      "151.101.3.1",
+      "151.101.195.1",
+      "199.232.53.21"
+    ],
+    "cnames": [
+      "www.glb.paypal.com",
+      "paypal-dynamic.map.fastly.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "visa.com",
+    "timestamp": "2025-10-06T22:09:00.943827",
+    "status": "success",
+    "cdn_providers": [
+      "Cloudflare"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Cloudflare"
+      ],
+      "cname": [
+        "Cloudflare"
+      ],
+      "headers": [
+        "Cloudflare"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Cloudflare": [
+          "162.159.153.2",
+          "162.159.152.2",
+          "104.18.14.19",
+          "104.18.15.19"
+        ]
+      },
+      "cname": {
+        "Cloudflare": [
+          "www.visa.com.cdn.cloudflare.net (matched: cloudflare)"
+        ]
+      },
+      "headers": {
+        "Cloudflare": [
+          "cf-ray: 98a8232ae893b556-lhr"
+        ]
+      }
+    },
+    "ips": [
+      "162.159.153.2",
+      "162.159.152.2",
+      "104.18.14.19",
+      "104.18.15.19"
+    ],
+    "cnames": [
+      "www.visa.com.cdn.cloudflare.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "mastercard.com",
+    "timestamp": "2025-10-06T22:09:01.299307",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Akamai"
+      ],
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Akamai": [
+          "23.64.27.194"
+        ]
+      },
+      "cname": {
+        "Akamai": [
+          "www.mastercard.com.edgekey.net (matched: edgekey)",
+          "e5188.x.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "216.119.218.99",
+      "23.64.27.194"
+    ],
+    "cnames": [
+      "www.mastercard.com.edgekey.net",
+      "e5188.x.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "stripe.com",
+    "timestamp": "2025-10-06T22:09:02.067386",
+    "status": "success",
+    "cdn_providers": [
+      "Azure CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Azure CDN"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "52.49.17.168",
+          "52.30.58.64"
+        ]
+      }
+    },
+    "ips": [
+      "52.49.17.168",
+      "18.202.131.124",
+      "52.30.58.64"
+    ],
+    "cnames": [
+      "stripe.com"
+    ],
+    "error": null
+  },
+  {
+    "domain": "block.xyz",
+    "timestamp": "2025-10-06T22:09:02.633797",
+    "status": "success",
+    "cdn_providers": [
+      "Fastly"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Fastly"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Fastly": [
+          "151.101.65.49",
+          "151.101.193.49",
+          "151.101.1.49",
+          "151.101.129.49"
+        ]
+      }
+    },
+    "ips": [
+      "151.101.65.49",
+      "151.101.193.49",
+      "151.101.1.49",
+      "151.101.129.49"
+    ],
+    "cnames": [],
+    "error": null
+  },
+  {
+    "domain": "exxonmobil.com",
+    "timestamp": "2025-10-06T22:09:02.865886",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.exxonmobil.com.edgekey.net (matched: edgekey)",
+          "e9138.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "172.190.140.10",
+      "13.64.199.231",
+      "104.124.160.33"
+    ],
+    "cnames": [
+      "www.exxonmobil.com.edgekey.net",
+      "e9138.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "chevron.com",
+    "timestamp": "2025-10-06T22:09:03.500859",
+    "status": "success",
+    "cdn_providers": [
+      "Azure CDN"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "ip": [
+        "Azure CDN"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Azure CDN": [
+          "13.107.213.64",
+          "13.107.246.64"
+        ]
+      }
+    },
+    "ips": [
+      "146.23.28.130",
+      "13.107.213.64",
+      "13.107.246.64"
+    ],
+    "cnames": [
+      "www-afd.azurefd.net",
+      "azurefd-t-prod.trafficmanager.net",
+      "shed.dual-low.part-0036.t-0009.t-msedge.net",
+      "part-0036.t-0009.t-msedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "conocophillips.com",
+    "timestamp": "2025-10-06T22:09:04.475542",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "www.conocophillips.com.edgekey.net (matched: edgekey)",
+          "e103501.dsca.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "138.32.33.226",
+      "95.100.104.8",
+      "95.100.104.10"
+    ],
+    "cnames": [
+      "www.conocophillips.com.edgekey.net",
+      "e103501.dsca.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "duke-energy.com",
+    "timestamp": "2025-10-06T22:09:05.237214",
+    "status": "success",
+    "cdn_providers": [
+      "Akamai"
+    ],
+    "multi_cdn": false,
+    "detection_methods": {
+      "cname": [
+        "Akamai"
+      ]
+    },
+    "detection_details": {
+      "cname": {
+        "Akamai": [
+          "sitecore.edgekey.net (matched: edgekey)",
+          "e224575.a.akamaiedge.net (matched: akamai)"
+        ]
+      }
+    },
+    "ips": [
+      "159.110.128.81",
+      "95.100.104.20",
+      "95.100.104.27"
+    ],
+    "cnames": [
+      "sitecore.edgekey.net",
+      "e224575.a.akamaiedge.net"
+    ],
+    "error": null
+  },
+  {
+    "domain": "nexteraenergy.com",
+    "timestamp": "2025-10-06T22:09:06.036578",
+    "status": "success",
+    "cdn_providers": [
+      "AWS CloudFront",
+      "Google Cloud CDN"
+    ],
+    "multi_cdn": true,
+    "detection_methods": {
+      "ip": [
+        "Google Cloud CDN"
+      ],
+      "cname": [
+        "AWS CloudFront"
+      ]
+    },
+    "detection_details": {
+      "ip": {
+        "Google Cloud CDN": [
+          "34.230.143.86"
+        ]
+      },
+      "cname": {
+        "AWS CloudFront": [
+          "d1rtk7f9ktvvqf.cloudfront.net (matched: cloudfront)"
+        ]
+      }
+    },
+    "ips": [
+      "34.230.143.86",
+      "54.236.212.102",
+      "3.165.148.58",
+      "3.165.148.113",
+      "3.165.148.82",
+      "3.165.148.100"
+    ],
+    "cnames": [
+      "d1rtk7f9ktvvqf.cloudfront.net"
+    ],
+    "error": null
+  }
+]

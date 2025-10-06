@@ -161,30 +161,54 @@ def get_http_headers(domain: str) -> Dict[str, str]:
 def get_cname_chain(domain: str) -> List[str]:
     """Get CNAME chain for domain"""
     cnames = []
-    current = domain
     
-    try:
-        for _ in range(10):
-            result = subprocess.run(['dig', '+short', 'CNAME', current],
-                                    capture_output=True, text=True, timeout=5)
-            cname = result.stdout.strip().rstrip('.')
-            if not cname or cname == current:
-                break
-            cnames.append(cname)
-            current = cname
-    except:
-        pass
+    # Try the domain as-is first
+    domains_to_check = [domain]
+    
+    # If domain doesn't start with www, also try www version
+    if not domain.startswith('www.'):
+        domains_to_check.append(f'www.{domain}')
+    
+    for check_domain in domains_to_check:
+        current = check_domain
+        try:
+            for _ in range(10):
+                result = subprocess.run(['dig', '+short', 'CNAME', current],
+                                        capture_output=True, text=True, timeout=5)
+                cname = result.stdout.strip().rstrip('.')
+                if not cname or cname == current:
+                    break
+                if cname not in cnames:  # Avoid duplicates
+                    cnames.append(cname)
+                current = cname
+        except:
+            pass
     
     return cnames
 
 
 def resolve_domain_ips(domain: str) -> List[str]:
     """Resolve domain to IP addresses"""
-    try:
-        ips = socket.getaddrinfo(domain, None)
-        return list(set([ip[4][0] for ip in ips]))
-    except:
-        return []
+    all_ips = []
+    
+    # Check the domain as-is
+    domains_to_check = [domain]
+    
+    # If domain doesn't start with www, also check www version
+    if not domain.startswith('www.'):
+        domains_to_check.append(f'www.{domain}')
+    
+    for check_domain in domains_to_check:
+        try:
+            ips = socket.getaddrinfo(check_domain, None)
+            for ip in ips:
+                ip_addr = ip[4][0]
+                if ip_addr not in all_ips:
+                    all_ips.append(ip_addr)
+        except:
+            pass
+    
+    return all_ips
 
 
 def identify_cdn_from_ip(ip: str) -> Set[str]:
