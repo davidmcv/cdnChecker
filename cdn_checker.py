@@ -252,39 +252,83 @@ def get_reverse_dns(ip: str) -> str:
 
 
 def get_asn_from_ip(ip: str) -> Tuple[str, str]:
-    """Get ASN and organization from IP using whois"""
+    """Get ASN and organization from IP using multiple methods"""
+    
+    # Method 1: Try Team Cymru DNS-based lookup (faster, no rate limits)
     try:
-        result = subprocess.run(['whois', '-h', 'whois.cymru.com', ip],
-                                capture_output=True, text=True, timeout=10)
+        # Reverse the IP for DNS query
+        reversed_ip = '.'.join(ip.split('.')[::-1])
+        query = f"{reversed_ip}.origin.asn.cymru.com"
         
-        lines = result.stdout.strip().split('\n')
-        if len(lines) >= 2:
-            # Parse cymru format: AS | IP | BGP Prefix | CC | Registry | Allocated | AS Name
-            parts = [p.strip() for p in lines[1].split('|')]
-            if len(parts) >= 7:
-                asn = parts[0]
-                org = parts[6] if len(parts) > 6 else ''
+        result = subprocess.run(['dig', '+short', 'TXT', query],
+                                capture_output=True, text=True, timeout=5)
+        
+        if result.returncode == 0 and result.stdout.strip():
+            # Parse format: "23028 | 216.90.108.0/24 | US | arin | 1998-09-25"
+            output = result.stdout.strip().strip('"')
+            parts = [p.strip() for p in output.split('|')]
+            if len(parts) >= 1 and parts[0].isdigit():
+                asn = f"AS{parts[0]}"
+                
+                # Get AS name
+                as_query = f"AS{parts[0]}.asn.cymru.com"
+                name_result = subprocess.run(['dig', '+short', 'TXT', as_query],
+                                            capture_output=True, text=True, timeout=5)
+                org = ''
+                if name_result.returncode == 0 and name_result.stdout.strip():
+                    name_output = name_result.stdout.strip().strip('"')
+                    name_parts = [p.strip() for p in name_output.split('|')]
+                    if len(name_parts) >= 5:
+                        org = name_parts[4]
+                
                 return asn, org
     except:
         pass
     
-    # Fallback: try standard whois
+    # Method 2: Try standard whois with improved parsing
     try:
         result = subprocess.run(['whois', ip],
-                                capture_output=True, text=True, timeout=10)
+                                capture_output=True, text=True, timeout=15)
         
-        asn_match = re.search(r'OriginAS:\s*(AS\d+)', result.stdout, re.IGNORECASE)
-        if not asn_match:
-            asn_match = re.search(r'origin:\s*(AS\d+)', result.stdout, re.IGNORECASE)
-        
-        org_match = re.search(r'OrgName:\s*(.+)', result.stdout, re.IGNORECASE)
-        
-        asn = asn_match.group(1) if asn_match else ''
-        org = org_match.group(1).strip() if org_match else ''
-        
-        return asn, org
+        if result.returncode == 0:
+            # Try multiple ASN patterns
+            asn_patterns = [
+                r'OriginAS:\s*(AS\d+)',
+                r'origin:\s*(AS\d+)',
+                r'ASNumber:\s*(\d+)',
+                r'aut-num:\s*(AS\d+)',
+            ]
+            
+            asn = ''
+            for pattern in asn_patterns:
+                asn_match = re.search(pattern, result.stdout, re.IGNORECASE | re.MULTILINE)
+                if asn_match:
+                    asn = asn_match.group(1)
+                    if not asn.startswith('AS'):
+                        asn = f"AS{asn}"
+                    break
+            
+            # Try multiple org patterns
+            org_patterns = [
+                r'OrgName:\s*(.+)',
+                r'org-name:\s*(.+)',
+                r'descr:\s*(.+)',
+                r'owner:\s*(.+)',
+            ]
+            
+            org = ''
+            for pattern in org_patterns:
+                org_match = re.search(pattern, result.stdout, re.IGNORECASE | re.MULTILINE)
+                if org_match:
+                    org = org_match.group(1).strip()
+                    break
+            
+            if asn:
+                return asn, org
     except:
-        return '', ''
+        pass
+    
+    return '', ''
 
 
 def resolve_domain_ips(domain: str) -> List[str]:
@@ -432,8 +476,12 @@ def analyze_domain_cdn(domain: str) -> Dict:
         
         # Step 2: ASN lookup (most reliable)
         asn_detections = {}
-        for ip in ips[:3]:  # Check first 3 IPs
+        asn_lookup_count = 0
+        
+        for ip in ips[:3]:  # Check first 3 IPs to avoid rate limiting
             asn, org = get_asn_from_ip(ip)
+            asn_lookup_count += 1
+            
             if asn:
                 result['asn_info'][ip] = {'asn': asn, 'org': org}
                 cdns = identify_cdn_from_asn(asn)
@@ -443,11 +491,17 @@ def analyze_domain_cdn(domain: str) -> Dict:
                         if cdn not in asn_detections:
                             asn_detections[cdn] = []
                         asn_detections[cdn].append(f"{ip} ({asn} - {org})")
+                else:
+                    # Store ASN even if not matched to known CDN
+                    result['asn_info'][ip] = {'asn': asn, 'org': org}
         
         if asn_detections:
             result['detection_methods']['asn'] = list(asn_detections.keys())
             result['detection_details']['asn'] = asn_detections
             print(f" ASN✓", end='', flush=True)
+        elif asn_lookup_count > 0 and result['asn_info']:
+            # ASN lookup worked but didn't match known CDN
+            print(f" ASN({len(result['asn_info'])})", end='', flush=True)
         
         # Step 3: Reverse DNS
         reverse_dns_detections = {}
@@ -930,4 +984,3 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         sys.exit(1)
-
