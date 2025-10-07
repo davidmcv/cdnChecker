@@ -1,7 +1,7 @@
 [
   {
     "domain": "unitedhealthgroup.com",
-    "timestamp": "2025-10-06T22:41:21.809952",
+    "timestamp": "2025-10-06T23:02:44.337248",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -49,7 +49,7 @@
   },
   {
     "domain": "cvshealth.com",
-    "timestamp": "2025-10-06T22:41:30.534979",
+    "timestamp": "2025-10-06T23:02:59.199050",
     "status": "success",
     "cdn_providers": [
       "Akamai",
@@ -113,7 +113,7 @@
   },
   {
     "domain": "jnj.com",
-    "timestamp": "2025-10-06T22:41:32.933712",
+    "timestamp": "2025-10-06T23:03:05.758106",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -130,7 +130,7 @@
     "detection_details": {
       "ip": {
         "Akamai": [
-          "184.85.54.197"
+          "23.63.86.194"
         ]
       },
       "cname": {
@@ -145,7 +145,7 @@
     "ips": [
       "76.223.34.124",
       "13.248.160.137",
-      "184.85.54.197"
+      "23.63.86.194"
     ],
     "cnames": [
       "www.jnj.com.edgekey.net",
@@ -156,7 +156,7 @@
   },
   {
     "domain": "pfizer.com",
-    "timestamp": "2025-10-06T22:41:37.166236",
+    "timestamp": "2025-10-06T23:03:10.132444",
     "status": "success",
     "cdn_providers": [
       "Cloudflare"
@@ -187,7 +187,7 @@
       },
       "headers": {
         "Cloudflare": [
-          "cf-ray: 98a852fb0fe7f837-man",
+          "cf-ray: 98a8728afe57cca6-man",
           "cf-cache-status: hit"
         ]
       }
@@ -206,7 +206,7 @@
   },
   {
     "domain": "cigna.com",
-    "timestamp": "2025-10-06T22:41:39.652266",
+    "timestamp": "2025-10-06T23:03:12.433414",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront"
@@ -236,7 +236,7 @@
   },
   {
     "domain": "apple.com",
-    "timestamp": "2025-10-06T22:41:44.645029",
+    "timestamp": "2025-10-06T23:03:17.965789",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -292,7 +292,7 @@
   },
   {
     "domain": "microsoft.com",
-    "timestamp": "2025-10-06T22:41:46.853861",
+    "timestamp": "2025-10-06T23:03:21.327935",
     "status": "success",
     "cdn_providers": [
       "Akamai",
@@ -300,9 +300,11 @@
     ],
     "multi_cdn": true,
     "detection_methods": {
-      "ip": [
-        "Azure CDN",
+      "asn": [
         "Akamai"
+      ],
+      "ip": [
+        "Azure CDN"
       ],
       "cname": [
         "Akamai"
@@ -312,62 +314,64 @@
       ]
     },
     "detection_details": {
+      "asn": {
+        "Akamai": [
+          "92.123.241.137 (AS16625 - )"
+        ]
+      },
       "ip": {
         "Azure CDN": [
           "13.107.213.64",
           "13.107.246.64"
-        ],
-        "Akamai": [
-          "23.192.22.100"
         ]
       },
       "cname": {
         "Akamai": [
-          "www.microsoft.com-c-3.edgekey.net (matched: edgekey)",
-          "www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net (matched: akadns)",
-          "e13678.dscb.akamaiedge.net (matched: akamai)"
+          "www.microsoft.com-c-3.edgekey.net.\nwww.microsoft.com-c-3.edgekey.net.globalredir.akadns.net.\ne13678.dscb.akamaiedge.net (matched: akamai)"
         ]
       },
       "headers": {
         "Azure CDN": [
-          "x-azure-ref: 20251006t214149z-179bf966c7f84jkshc1lon84pg00000002tg00000000cqph"
+          "x-azure-ref: 20251006t220323z-17b47f46bf8z587rhc1lon0qzc00000003w000000000vne9"
         ]
       }
     },
-    "confidence_score": 0.8,
+    "confidence_score": 0.95,
     "confidence_level": "high",
     "ips": [
       "13.107.213.64",
       "13.107.246.64",
-      "23.192.22.100"
+      "92.123.241.137"
     ],
     "cnames": [
-      "www.microsoft.com-c-3.edgekey.net",
-      "www.microsoft.com-c-3.edgekey.net.globalredir.akadns.net",
-      "e13678.dscb.akamaiedge.net"
+      "www.microsoft.com-c-3.edgekey.net.\nwww.microsoft.com-c-3.edgekey.net.globalredir.akadns.net.\ne13678.dscb.akamaiedge.net"
     ],
-    "asn_info": {},
+    "asn_info": {
+      "92.123.241.137": {
+        "asn": "AS16625",
+        "org": ""
+      }
+    },
     "error": null
   },
   {
     "domain": "amazon.com",
-    "timestamp": "2025-10-06T22:41:50.004506",
+    "timestamp": "2025-10-06T23:03:23.999972",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
+      "Akamai",
       "Azure CDN"
     ],
     "multi_cdn": true,
     "detection_methods": {
       "ip": [
         "AWS CloudFront",
-        "Azure CDN"
+        "Azure CDN",
+        "Akamai"
       ],
       "cname": [
-        "AWS CloudFront"
-      ],
-      "headers": [
-        "AWS CloudFront"
+        "Akamai"
       ]
     },
     "detection_details": {
@@ -378,16 +382,15 @@
         ],
         "Azure CDN": [
           "52.94.236.248"
+        ],
+        "Akamai": [
+          "2.23.149.236"
         ]
       },
       "cname": {
-        "AWS CloudFront": [
-          "d3ag4hukkh62yn.cloudfront.net (matched: cloudfront)"
-        ]
-      },
-      "headers": {
-        "AWS CloudFront": [
-          "x-amz-cf-pop: man51-p6"
+        "Akamai": [
+          "www.amazon.com.edgekey.net (matched: edgekey)",
+          "e15316.dsca.akamaiedge.net (matched: akamai)"
         ]
       }
     },
@@ -395,20 +398,21 @@
     "confidence_level": "high",
     "ips": [
       "54.239.28.85",
-      "205.251.242.103",
       "52.94.236.248",
-      "3.173.177.27"
+      "205.251.242.103",
+      "2.23.149.236"
     ],
     "cnames": [
       "tp.47cf2c8c9-frontier.amazon.com",
-      "d3ag4hukkh62yn.cloudfront.net"
+      "www.amazon.com.edgekey.net",
+      "e15316.dsca.akamaiedge.net"
     ],
     "asn_info": {},
     "error": null
   },
   {
     "domain": "google.com",
-    "timestamp": "2025-10-06T22:41:53.870087",
+    "timestamp": "2025-10-06T23:03:27.633108",
     "status": "success",
     "cdn_providers": [
       "Google Cloud CDN"
@@ -417,45 +421,32 @@
     "detection_methods": {
       "reverse_dns": [
         "Google Cloud CDN"
-      ],
-      "ip": [
-        "Google Cloud CDN"
       ]
     },
     "detection_details": {
       "reverse_dns": {
         "Google Cloud CDN": [
-          "142.251.30.113 \u2192 sv-in-f113.1e100.net",
-          "142.251.30.138 \u2192 sv-in-f138.1e100.net",
-          "142.251.30.101 \u2192 sv-in-f101.1e100.net"
-        ]
-      },
-      "ip": {
-        "Google Cloud CDN": [
-          "142.250.117.147",
-          "142.250.117.99",
-          "142.250.117.106",
-          "142.250.117.105",
-          "142.250.117.103",
-          "142.250.117.104"
+          "142.251.29.101 \u2192 uv-in-f101.1e100.net",
+          "142.251.29.102 \u2192 uv-in-f102.1e100.net",
+          "142.251.29.139 \u2192 uv-in-f139.1e100.net"
         ]
       }
     },
     "confidence_score": 0.85,
     "confidence_level": "high",
     "ips": [
-      "142.251.30.113",
-      "142.251.30.138",
-      "142.251.30.101",
-      "142.251.30.139",
-      "142.251.30.100",
-      "142.251.30.102",
-      "142.250.117.147",
-      "142.250.117.99",
-      "142.250.117.106",
-      "142.250.117.105",
-      "142.250.117.103",
-      "142.250.117.104"
+      "142.251.29.101",
+      "142.251.29.102",
+      "142.251.29.139",
+      "142.251.29.138",
+      "142.251.29.113",
+      "142.251.29.100",
+      "142.251.29.99",
+      "142.251.29.105",
+      "142.251.29.147",
+      "142.251.29.104",
+      "142.251.29.106",
+      "142.251.29.103"
     ],
     "cnames": [],
     "asn_info": {},
@@ -463,7 +454,7 @@
   },
   {
     "domain": "meta.com",
-    "timestamp": "2025-10-06T22:41:57.128642",
+    "timestamp": "2025-10-06T23:03:30.946549",
     "status": "success",
     "cdn_providers": [
       "Internal/Proprietary CDN"
@@ -476,7 +467,6 @@
     "confidence_score": 0.0,
     "confidence_level": "medium",
     "ips": [
-      "163.70.151.23",
       "157.240.225.5"
     ],
     "cnames": [
@@ -487,7 +477,7 @@
   },
   {
     "domain": "walmart.com",
-    "timestamp": "2025-10-06T22:42:00.057815",
+    "timestamp": "2025-10-06T23:03:33.136696",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -507,13 +497,13 @@
     "detection_details": {
       "asn": {
         "Akamai": [
-          "2.22.68.127 (AS16625 - )"
+          "2.18.101.167 (AS16625 - )"
         ]
       },
       "ip": {
         "Akamai": [
-          "23.206.176.192",
-          "2.22.68.127"
+          "2.18.101.167",
+          "23.219.193.182"
         ]
       },
       "cname": {
@@ -526,8 +516,8 @@
     "confidence_score": 0.95,
     "confidence_level": "high",
     "ips": [
-      "23.206.176.192",
-      "2.22.68.127"
+      "2.18.101.167",
+      "23.219.193.182"
     ],
     "cnames": [
       "www.walmart.com.ultradns-wal.co",
@@ -535,7 +525,7 @@
       "e4373.x.akamaiedge.net"
     ],
     "asn_info": {
-      "2.22.68.127": {
+      "2.18.101.167": {
         "asn": "AS16625",
         "org": ""
       }
@@ -544,64 +534,63 @@
   },
   {
     "domain": "amazon.com",
-    "timestamp": "2025-10-06T22:42:02.266076",
+    "timestamp": "2025-10-06T23:03:35.490866",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
+      "Akamai",
       "Azure CDN"
     ],
     "multi_cdn": true,
     "detection_methods": {
       "ip": [
+        "Azure CDN",
         "AWS CloudFront",
-        "Azure CDN"
+        "Akamai"
       ],
       "cname": [
-        "AWS CloudFront"
-      ],
-      "headers": [
-        "AWS CloudFront"
+        "Akamai"
       ]
     },
     "detection_details": {
       "ip": {
+        "Azure CDN": [
+          "52.94.236.248"
+        ],
         "AWS CloudFront": [
           "205.251.242.103",
           "54.239.28.85"
         ],
-        "Azure CDN": [
-          "52.94.236.248"
+        "Akamai": [
+          "2.23.149.236"
         ]
       },
       "cname": {
-        "AWS CloudFront": [
-          "d3ag4hukkh62yn.cloudfront.net (matched: cloudfront)"
-        ]
-      },
-      "headers": {
-        "AWS CloudFront": [
-          "x-amz-cf-pop: man51-p6"
+        "Akamai": [
+          "www.amazon.com.edgekey.net (matched: edgekey)",
+          "e15316.dsca.akamaiedge.net (matched: akamai)"
         ]
       }
     },
     "confidence_score": 0.8,
     "confidence_level": "high",
     "ips": [
-      "205.251.242.103",
       "52.94.236.248",
+      "205.251.242.103",
       "54.239.28.85",
-      "3.173.177.27"
+      "2.23.149.236"
     ],
     "cnames": [
       "tp.47cf2c8c9-frontier.amazon.com",
-      "d3ag4hukkh62yn.cloudfront.net"
+      "www.amazon.com.edgekey.net",
+      "e15316.dsca.akamaiedge.net"
     ],
     "asn_info": {},
     "error": null
   },
   {
     "domain": "costco.com",
-    "timestamp": "2025-10-06T22:42:05.827919",
+    "timestamp": "2025-10-06T23:03:39.591107",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -657,7 +646,7 @@
   },
   {
     "domain": "homedepot.com",
-    "timestamp": "2025-10-06T22:42:08.247634",
+    "timestamp": "2025-10-06T23:03:42.082663",
     "status": "success",
     "cdn_providers": [
       "Akamai",
@@ -665,9 +654,6 @@
     ],
     "multi_cdn": true,
     "detection_methods": {
-      "asn": [
-        "Akamai"
-      ],
       "reverse_dns": [
         "Google Cloud CDN"
       ],
@@ -683,11 +669,6 @@
       ]
     },
     "detection_details": {
-      "asn": {
-        "Akamai": [
-          "2.22.69.145 (AS16625 - )"
-        ]
-      },
       "reverse_dns": {
         "Google Cloud CDN": [
           "35.201.95.83 \u2192 83.95.201.35.bc.googleusercontent.com"
@@ -698,7 +679,7 @@
           "35.201.95.83"
         ],
         "Akamai": [
-          "2.22.69.145"
+          "23.206.178.137"
         ]
       },
       "cname": {
@@ -709,32 +690,27 @@
       },
       "headers": {
         "Akamai": [
-          "akamai-grn: 0.d5a31002.1759786930.2ca3cf6",
-          "akamai-grn: 0.d5a31002.1759786930.2ca3cf6"
+          "akamai-grn: 0.1198645f.1759788225.175f72f0",
+          "akamai-grn: 0.1198645f.1759788225.175f72f0"
         ]
       }
     },
-    "confidence_score": 0.95,
+    "confidence_score": 0.85,
     "confidence_level": "high",
     "ips": [
       "35.201.95.83",
-      "2.22.69.145"
+      "23.206.178.137"
     ],
     "cnames": [
       "www.homedepot.com.edgekey.net",
       "e14801.x.akamaiedge.net"
     ],
-    "asn_info": {
-      "2.22.69.145": {
-        "asn": "AS16625",
-        "org": ""
-      }
-    },
+    "asn_info": {},
     "error": null
   },
   {
     "domain": "target.com",
-    "timestamp": "2025-10-06T22:42:10.251530",
+    "timestamp": "2025-10-06T23:03:45.208410",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -754,7 +730,8 @@
           "151.101.66.187",
           "151.101.194.187",
           "151.101.2.187",
-          "151.101.130.187"
+          "151.101.130.187",
+          "199.232.54.187"
         ]
       },
       "cname": {
@@ -769,7 +746,8 @@
       "151.101.66.187",
       "151.101.194.187",
       "151.101.2.187",
-      "151.101.130.187"
+      "151.101.130.187",
+      "199.232.54.187"
     ],
     "cnames": [
       "sites.target.map.fastly.net"
@@ -779,7 +757,7 @@
   },
   {
     "domain": "jpmorganchase.com",
-    "timestamp": "2025-10-06T22:42:14.555962",
+    "timestamp": "2025-10-06T23:03:50.154854",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -796,8 +774,8 @@
     "detection_details": {
       "ip": {
         "Akamai": [
-          "95.100.104.33",
-          "95.100.104.6"
+          "23.3.68.151",
+          "23.3.68.140"
         ]
       },
       "cname": {
@@ -813,8 +791,8 @@
       "146.143.70.109",
       "146.143.134.109",
       "146.143.198.109",
-      "95.100.104.33",
-      "95.100.104.6"
+      "23.3.68.151",
+      "23.3.68.140"
     ],
     "cnames": [
       "www.jpmorganchase.com.edgekey.net",
@@ -825,7 +803,7 @@
   },
   {
     "domain": "jpmorgan.com",
-    "timestamp": "2025-10-06T22:42:18.732580",
+    "timestamp": "2025-10-06T23:03:57.069797",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -842,8 +820,8 @@
     "detection_details": {
       "ip": {
         "Akamai": [
-          "95.100.104.6",
-          "95.100.104.33"
+          "23.3.68.140",
+          "23.3.68.151"
         ]
       },
       "cname": {
@@ -859,8 +837,8 @@
       "146.143.134.109",
       "146.143.198.109",
       "146.143.70.109",
-      "95.100.104.6",
-      "95.100.104.33"
+      "23.3.68.140",
+      "23.3.68.151"
     ],
     "cnames": [
       "www.jpmorgan.com.edgekey.net",
@@ -871,7 +849,7 @@
   },
   {
     "domain": "chase.com",
-    "timestamp": "2025-10-06T22:42:22.596604",
+    "timestamp": "2025-10-06T23:04:00.595014",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -888,8 +866,8 @@
     "detection_details": {
       "ip": {
         "Akamai": [
-          "23.48.165.96",
-          "23.48.165.70"
+          "88.221.87.208",
+          "2.22.228.242"
         ]
       },
       "cname": {
@@ -906,8 +884,8 @@
       "146.143.83.57",
       "146.143.13.57",
       "146.143.141.57",
-      "23.48.165.96",
-      "23.48.165.70"
+      "88.221.87.208",
+      "2.22.228.242"
     ],
     "cnames": [
       "gtm.www.chase.com.akadns.net",
@@ -919,13 +897,16 @@
   },
   {
     "domain": "bankofamerica.com",
-    "timestamp": "2025-10-06T22:42:26.686080",
+    "timestamp": "2025-10-06T23:04:07.732165",
     "status": "success",
     "cdn_providers": [
       "Akamai"
     ],
     "multi_cdn": false,
     "detection_methods": {
+      "asn": [
+        "Akamai"
+      ],
       "ip": [
         "Akamai"
       ],
@@ -937,10 +918,15 @@
       ]
     },
     "detection_details": {
+      "asn": {
+        "Akamai": [
+          "2.21.15.66 (AS20940 - )"
+        ]
+      },
       "ip": {
         "Akamai": [
-          "23.3.68.140",
-          "23.3.68.147"
+          "2.21.15.66",
+          "2.21.15.65"
         ]
       },
       "cname": {
@@ -951,29 +937,34 @@
       },
       "headers": {
         "Akamai": [
-          "akamai-request-bc: [a=23.3.15.12,b=475757379,c=g,n=gb_en_london,o=20940],[c=c,n=us_ga_atlanta,o=20940],[a=104,c=o]"
+          "akamai-request-bc: [a=2.21.15.61,b=274296539,c=g,n=gb_en_manchester,o=20940],[c=c,n=us_tx_dallas,o=20940],[a=104,c=o]"
         ]
       }
     },
-    "confidence_score": 0.8,
+    "confidence_score": 0.95,
     "confidence_level": "high",
     "ips": [
       "171.159.228.150",
       "171.161.148.150",
-      "23.3.68.140",
-      "23.3.68.147"
+      "2.21.15.66",
+      "2.21.15.65"
     ],
     "cnames": [
       "wwwui.ecglb.bac.com",
       "www.bankofamerica.com.edgekey.net",
       "e88506.a.akamaiedge.net"
     ],
-    "asn_info": {},
+    "asn_info": {
+      "2.21.15.66": {
+        "asn": "AS20940",
+        "org": ""
+      }
+    },
     "error": null
   },
   {
     "domain": "wellsfargo.com",
-    "timestamp": "2025-10-06T22:42:30.843115",
+    "timestamp": "2025-10-06T23:04:11.992819",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -993,17 +984,15 @@
     "detection_details": {
       "asn": {
         "Akamai": [
-          "2.22.228.209 (AS20940 - )",
-          "2.22.228.186 (AS20940 - )",
-          "2.18.63.63 (AS20940 - )"
+          "2.18.63.13 (AS20940 - )"
         ]
       },
       "ip": {
         "Akamai": [
-          "2.22.228.209",
-          "2.22.228.186",
-          "2.18.63.63",
-          "2.18.63.13"
+          "104.77.161.91",
+          "104.77.161.84",
+          "2.18.63.13",
+          "2.18.63.63"
         ]
       },
       "cname": {
@@ -1016,25 +1005,17 @@
     "confidence_score": 0.95,
     "confidence_level": "high",
     "ips": [
-      "2.22.228.209",
-      "2.22.228.186",
-      "2.18.63.63",
-      "2.18.63.13"
+      "104.77.161.91",
+      "104.77.161.84",
+      "2.18.63.13",
+      "2.18.63.63"
     ],
     "cnames": [
       "www.wellsfargo.com.edgekey.net",
       "e82164.b.akamaiedge.net"
     ],
     "asn_info": {
-      "2.22.228.209": {
-        "asn": "AS20940",
-        "org": ""
-      },
-      "2.22.228.186": {
-        "asn": "AS20940",
-        "org": ""
-      },
-      "2.18.63.63": {
+      "2.18.63.13": {
         "asn": "AS20940",
         "org": ""
       }
@@ -1043,16 +1024,13 @@
   },
   {
     "domain": "citigroup.com",
-    "timestamp": "2025-10-06T22:42:34.212015",
+    "timestamp": "2025-10-06T23:04:16.215373",
     "status": "success",
     "cdn_providers": [
       "Akamai"
     ],
     "multi_cdn": false,
     "detection_methods": {
-      "asn": [
-        "Akamai"
-      ],
       "ip": [
         "Akamai"
       ],
@@ -1061,15 +1039,10 @@
       ]
     },
     "detection_details": {
-      "asn": {
-        "Akamai": [
-          "95.100.104.13 (AS20940 - )"
-        ]
-      },
       "ip": {
         "Akamai": [
-          "95.100.104.13",
-          "95.100.104.35"
+          "23.3.68.152",
+          "23.3.68.156"
         ]
       },
       "cname": {
@@ -1079,29 +1052,24 @@
         ]
       }
     },
-    "confidence_score": 0.95,
+    "confidence_score": 0.8,
     "confidence_level": "high",
     "ips": [
       "104.96.178.165",
       "104.94.222.171",
-      "95.100.104.13",
-      "95.100.104.35"
+      "23.3.68.152",
+      "23.3.68.156"
     ],
     "cnames": [
       "www.citigroup.com.edgekey.net",
       "e94533.a.akamaiedge.net"
     ],
-    "asn_info": {
-      "95.100.104.13": {
-        "asn": "AS20940",
-        "org": ""
-      }
-    },
+    "asn_info": {},
     "error": null
   },
   {
     "domain": "goldmansachs.com",
-    "timestamp": "2025-10-06T22:42:37.942087",
+    "timestamp": "2025-10-06T23:04:21.526848",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
@@ -1123,7 +1091,8 @@
     "detection_details": {
       "ip": {
         "Akamai": [
-          "23.63.88.65"
+          "23.45.101.32",
+          "23.64.25.74"
         ]
       },
       "cname": {
@@ -1146,8 +1115,8 @@
     "confidence_score": 0.8,
     "confidence_level": "high",
     "ips": [
-      "104.103.193.191",
-      "23.63.88.65"
+      "23.45.101.32",
+      "23.64.25.74"
     ],
     "cnames": [
       "www.gs.com",
@@ -1159,7 +1128,7 @@
   },
   {
     "domain": "paypal.com",
-    "timestamp": "2025-10-06T22:42:40.478640",
+    "timestamp": "2025-10-06T23:04:28.481256",
     "status": "success",
     "cdn_providers": [
       "Cloudflare",
@@ -1209,7 +1178,7 @@
   },
   {
     "domain": "visa.com",
-    "timestamp": "2025-10-06T22:42:44.386258",
+    "timestamp": "2025-10-06T23:04:38.437290",
     "status": "success",
     "cdn_providers": [
       "Cloudflare"
@@ -1229,8 +1198,8 @@
     "detection_details": {
       "ip": {
         "Cloudflare": [
-          "162.159.153.2",
           "162.159.152.2",
+          "162.159.153.2",
           "104.18.14.19",
           "104.18.15.19"
         ]
@@ -1242,7 +1211,7 @@
       },
       "headers": {
         "Cloudflare": [
-          "cf-ray: 98a854a298901118-man",
+          "cf-ray: 98a874c6d9a60c6e-man",
           "cf-cache-status: hit"
         ]
       }
@@ -1250,8 +1219,8 @@
     "confidence_score": 0.8,
     "confidence_level": "high",
     "ips": [
-      "162.159.153.2",
       "162.159.152.2",
+      "162.159.153.2",
       "104.18.14.19",
       "104.18.15.19"
     ],
@@ -1263,7 +1232,7 @@
   },
   {
     "domain": "mastercard.com",
-    "timestamp": "2025-10-06T22:42:47.441811",
+    "timestamp": "2025-10-06T23:04:43.936499",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -1310,11 +1279,12 @@
   },
   {
     "domain": "stripe.com",
-    "timestamp": "2025-10-06T22:42:50.242712",
+    "timestamp": "2025-10-06T23:04:47.451941",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
-      "Azure CDN"
+      "Azure CDN",
+      "Google Cloud CDN"
     ],
     "multi_cdn": true,
     "detection_methods": {
@@ -1322,30 +1292,33 @@
         "AWS CloudFront"
       ],
       "ip": [
+        "Google Cloud CDN",
         "Azure CDN"
       ]
     },
     "detection_details": {
       "reverse_dns": {
         "AWS CloudFront": [
-          "18.202.131.124 \u2192 ec2-18-202-131-124.eu-west-1.compute.amazonaws.com",
-          "52.30.58.64 \u2192 ec2-52-30-58-64.eu-west-1.compute.amazonaws.com",
-          "52.49.17.168 \u2192 ec2-52-49-17-168.eu-west-1.compute.amazonaws.com"
+          "54.76.53.164 \u2192 ec2-54-76-53-164.eu-west-1.compute.amazonaws.com",
+          "34.252.74.21 \u2192 ec2-34-252-74-21.eu-west-1.compute.amazonaws.com",
+          "52.215.231.162 \u2192 ec2-52-215-231-162.eu-west-1.compute.amazonaws.com"
         ]
       },
       "ip": {
+        "Google Cloud CDN": [
+          "34.252.74.21"
+        ],
         "Azure CDN": [
-          "52.30.58.64",
-          "52.49.17.168"
+          "52.215.231.162"
         ]
       }
     },
     "confidence_score": 0.85,
     "confidence_level": "high",
     "ips": [
-      "18.202.131.124",
-      "52.30.58.64",
-      "52.49.17.168"
+      "54.76.53.164",
+      "34.252.74.21",
+      "52.215.231.162"
     ],
     "cnames": [
       "stripe.com"
@@ -1355,7 +1328,7 @@
   },
   {
     "domain": "block.xyz",
-    "timestamp": "2025-10-06T22:42:54.590801",
+    "timestamp": "2025-10-06T23:04:53.517490",
     "status": "success",
     "cdn_providers": [
       "Fastly"
@@ -1390,7 +1363,7 @@
   },
   {
     "domain": "exxonmobil.com",
-    "timestamp": "2025-10-06T22:42:57.919117",
+    "timestamp": "2025-10-06T23:04:58.369738",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -1425,7 +1398,7 @@
   },
   {
     "domain": "chevron.com",
-    "timestamp": "2025-10-06T22:43:02.087414",
+    "timestamp": "2025-10-06T23:05:03.939990",
     "status": "success",
     "cdn_providers": [
       "Azure CDN"
@@ -1445,19 +1418,19 @@
     "detection_details": {
       "ip": {
         "Azure CDN": [
-          "13.107.246.64",
-          "13.107.213.64"
+          "13.107.246.65",
+          "13.107.213.65"
         ]
       },
       "cname": {
         "Azure CDN": [
           "www-afd.azurefd.net (matched: azurefd)",
-          "azurefd-t-prod.trafficmanager.net (matched: azurefd)"
+          ";; communications error to 192.168.0.1#53: timed out\nazurefd-t-prod.trafficmanager.net (matched: azurefd)"
         ]
       },
       "headers": {
         "Azure CDN": [
-          "x-azure-ref: 20251006t214306z-179bf966c7f7tlblhc1lonen8c00000004p000000000hr7h"
+          "x-azure-ref: 20251006t220515z-17b47f46bf8642qphc1lonk4540000000m2g00000000csvq"
         ]
       }
     },
@@ -1465,27 +1438,28 @@
     "confidence_level": "high",
     "ips": [
       "146.23.28.130",
-      "13.107.246.64",
-      "13.107.213.64"
+      "13.107.246.65",
+      "13.107.213.65"
     ],
     "cnames": [
       "www-afd.azurefd.net",
-      "azurefd-t-prod.trafficmanager.net",
-      "shed.dual-low.part-0036.t-0009.t-msedge.net",
-      "part-0036.t-0009.t-msedge.net"
+      ";; communications error to 192.168.0.1#53: timed out\nazurefd-t-prod.trafficmanager.net"
     ],
     "asn_info": {},
     "error": null
   },
   {
     "domain": "conocophillips.com",
-    "timestamp": "2025-10-06T22:43:06.353717",
+    "timestamp": "2025-10-06T23:05:15.136340",
     "status": "success",
     "cdn_providers": [
       "Akamai"
     ],
     "multi_cdn": false,
     "detection_methods": {
+      "asn": [
+        "Akamai"
+      ],
       "ip": [
         "Akamai"
       ],
@@ -1494,10 +1468,16 @@
       ]
     },
     "detection_details": {
+      "asn": {
+        "Akamai": [
+          "95.100.104.8 (AS20940 - )",
+          "95.100.104.10 (AS20940 - )"
+        ]
+      },
       "ip": {
         "Akamai": [
-          "23.3.68.146",
-          "23.3.68.159"
+          "95.100.104.8",
+          "95.100.104.10"
         ]
       },
       "cname": {
@@ -1507,23 +1487,32 @@
         ]
       }
     },
-    "confidence_score": 0.8,
+    "confidence_score": 0.95,
     "confidence_level": "high",
     "ips": [
       "138.32.33.226",
-      "23.3.68.146",
-      "23.3.68.159"
+      "95.100.104.8",
+      "95.100.104.10"
     ],
     "cnames": [
       "www.conocophillips.com.edgekey.net",
       "e103501.dsca.akamaiedge.net"
     ],
-    "asn_info": {},
+    "asn_info": {
+      "95.100.104.8": {
+        "asn": "AS20940",
+        "org": ""
+      },
+      "95.100.104.10": {
+        "asn": "AS20940",
+        "org": ""
+      }
+    },
     "error": null
   },
   {
     "domain": "duke-energy.com",
-    "timestamp": "2025-10-06T22:43:10.400995",
+    "timestamp": "2025-10-06T23:05:20.677983",
     "status": "success",
     "cdn_providers": [
       "Akamai"
@@ -1585,7 +1574,7 @@
   },
   {
     "domain": "nexteraenergy.com",
-    "timestamp": "2025-10-06T22:43:16.792675",
+    "timestamp": "2025-10-06T23:05:25.374957",
     "status": "success",
     "cdn_providers": [
       "AWS CloudFront",
@@ -1636,9 +1625,9 @@
       "54.236.212.102",
       "34.230.143.86",
       "3.165.148.58",
-      "3.165.148.82",
+      "3.165.148.100",
       "3.165.148.113",
-      "3.165.148.100"
+      "3.165.148.82"
     ],
     "cnames": [
       "d1rtk7f9ktvvqf.cloudfront.net"
